@@ -9,9 +9,13 @@ const images = [
     'images/image-8.jpeg',
     'images/image-9.jpeg'
 ]
-
-let imagesIndex = 0;
-setInterval( () =>{
-    imagesIndex++;
-    console.log(imagesIndex);
+const imgElement = document.getElementById("slider-img");
+let imgIndex = 0;
+setInterval( () =>{ 
+    if(imgIndex >= images.length){
+        imgIndex = 0;
+    }
+  const imagUrl = images[imgIndex]
+  imgElement.setAttribute("src", imagUrl)
+    imgIndex++;
 }, 1000)
